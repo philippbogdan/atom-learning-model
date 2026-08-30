@@ -1,0 +1,391 @@
+{
+ "atom": "ALGEBRA.SOLVE_LINEAR_SIMULTANEOUS",
+ "records": [
+  {
+   "id": "ALGEBRA.COLLECT_LIKE_TERMS",
+   "status": "proposed",
+   "content": {
+    "statement": "Simplify algebraic expressions by collecting like terms.",
+    "teachingUnit": {
+     "explanation": "Like terms have exactly the same letter(s) and power, e.g. 3x and 5x, or 2xy and -xy. Add or subtract only their number coefficients, keeping the letter part unchanged. Terms with different letters (x vs y) or different powers (x vs x\u00b2) cannot be combined. Keep the sign in front of each term with it. Example: 4x + 7 - 2x + 3 = (4x - 2x) + (7 + 3) = 2x + 10. The plain numbers (constants) are their own like group."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_COMBINES_UNLIKE_TERMS",
+      "wrongPattern": "Adds different variables together, e.g. 3x + 4y = 7xy or 7x.",
+      "misconception": "Thinks any terms with letters can be merged into one.",
+      "remediationHint": "Only combine terms with the EXACT same letter and power; 3x and 4y stay separate."
+     },
+     {
+      "code": "APPLY_DROPS_VARIABLE",
+      "wrongPattern": "Drops the letter when adding, e.g. 4x + 3x = 7 instead of 7x.",
+      "misconception": "Thinks collecting like terms means adding the numbers to give a plain number.",
+      "remediationHint": "Add the coefficients but keep the letter: 4x + 3x = 7x."
+     },
+     {
+      "code": "APPLY_IGNORES_SIGN",
+      "wrongPattern": "Treats a subtracted term as positive, e.g. 5a - 3a + 2a counted as 5+3+2 = 10a instead of 4a.",
+      "misconception": "Ignores the minus sign attached to a term when collecting.",
+      "remediationHint": "The sign in front belongs to that term; carry it: 5a - 3a + 2a = 4a."
+     },
+     {
+      "code": "APPLY_MERGES_POWERS",
+      "wrongPattern": "Combines different powers, e.g. x\u00b2 + x = x\u00b3 or 2x\u00b2.",
+      "misconception": "Believes x\u00b2 and x are like terms.",
+      "remediationHint": "x\u00b2 and x are different terms; they cannot be added together."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply"
+   ],
+   "conceptualPrerequisites": [],
+   "derivableFrom": [],
+   "homeSubtopics": [
+    "2.1.1",
+    "2.1.2",
+    "2.1.3",
+    "8.1.1"
+   ]
+  },
+  {
+   "id": "ALGEBRA.SOLVE_LINEAR_EQUATION",
+   "status": "proposed",
+   "content": {
+    "statement": "Solve linear equations in one variable, including those with variables on both sides.",
+    "teachingUnit": {
+     "explanation": "Solve by doing the same operation to both sides to isolate the variable. First clear brackets and collect like terms on each side. If the variable appears on both sides, move all variable terms to one side and all numbers to the other, then divide by the coefficient. Always do the inverse operation. Example: 5x - 3 = 2x + 9 \u2192 subtract 2x: 3x - 3 = 9 \u2192 add 3: 3x = 12 \u2192 divide by 3: x = 4. Check by substituting back."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_MOVE_WITHOUT_SIGN_CHANGE",
+      "wrongPattern": "Moves a term across the equals sign keeping its sign, e.g. from 3x - 3 = 9 writes 3x = 9 - 3 = 6.",
+      "misconception": "Thinks terms keep their sign when moved across the equals sign.",
+      "remediationHint": "Moving a term to the other side does the inverse: -3 becomes +3, so add 3 to both sides."
+     },
+     {
+      "code": "APPLY_DIVIDE_WRONG_DIRECTION",
+      "wrongPattern": "From 3x = 12 writes x = 3/12 instead of 12/3.",
+      "misconception": "Believes you always divide the coefficient by the number rather than the number by the coefficient.",
+      "remediationHint": "To undo 'times 3', divide the OTHER side by 3: x = 12 \u00f7 3 = 4."
+     },
+     {
+      "code": "APPLY_VARIABLES_NOT_ISOLATED",
+      "wrongPattern": "With variables on both sides, e.g. 5x - 3 = 2x + 9, divides everything by 5 or 2 before collecting the x terms together.",
+      "misconception": "Thinks you can divide by a coefficient while variables remain on both sides.",
+      "remediationHint": "First get all x terms on one side (subtract 2x) so there is a single coefficient before dividing."
+     },
+     {
+      "code": "APPLY_OPERATION_ONE_SIDE_ONLY",
+      "wrongPattern": "Adds or subtracts a number on only one side, e.g. 3x - 3 = 9 becomes 3x = 9 (the +3 not applied to the right).",
+      "misconception": "Believes you can change one side without balancing the other.",
+      "remediationHint": "Whatever you do to one side, do to BOTH sides to keep the equation balanced."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply"
+   ],
+   "conceptualPrerequisites": [
+    "ARITH.ORDER_OF_OPERATIONS",
+    "ALGEBRA.COLLECT_LIKE_TERMS",
+    "FRACTION.MULTIPLY_DIVIDE"
+   ],
+   "derivableFrom": [],
+   "homeSubtopics": [
+    "2.4.1"
+   ]
+  },
+  {
+   "id": "ALGEBRA.SOLVE_LINEAR_SIMULTANEOUS",
+   "status": "proposed",
+   "content": {
+    "statement": "Solve a system of two linear simultaneous equations in two variables algebraically using elimination or substitution, including multiplying equations to align coefficients.",
+    "teachingUnit": {
+     "explanation": "To solve two equations, eliminate one variable. For elimination, make the coefficients of one variable match by multiplying whole equations, then add or subtract: subtract when the matching coefficients have the SAME sign, add when they have OPPOSITE signs. Solve the resulting single equation, then substitute back to find the other variable. Example: 3x + 2y = 16 and x - 2y = 0. The y-coefficients are +2 and -2 (opposite signs), so add: 4x = 16, x = 4, then 4 - 2y = 0 gives y = 2. Always check both values in both original equations."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_ADD_WHEN_SHOULD_SUBTRACT",
+      "wrongPattern": "Adds equations when the matching coefficients have the same sign, e.g. 3x+2y=16 and x+2y=8 are added to give 4x+4y=24 instead of subtracting.",
+      "misconception": "Believes you always add the two equations to eliminate.",
+      "remediationHint": "Same Signs Subtract, opposite signs add \u2014 check the signs of the matched coefficients first."
+     },
+     {
+      "code": "APPLY_MULTIPLY_ONE_TERM_ONLY",
+      "wrongPattern": "Multiplies only the term being aligned, e.g. turns 2x+3y=7 into 6x+3y=7, leaving the constant and other term unchanged.",
+      "misconception": "Thinks you only need to scale the coefficient you want to match.",
+      "remediationHint": "Multiply EVERY term in the equation, including the constant, by the same number."
+     },
+     {
+      "code": "APPLY_FORGETS_SECOND_VARIABLE",
+      "wrongPattern": "Finds one variable (e.g. x=4) and stops, or writes it as the final answer without finding the other.",
+      "misconception": "Thinks solving gives a single value, not a pair.",
+      "remediationHint": "A solution needs BOTH x and y \u2014 substitute back to find the second."
+     },
+     {
+      "code": "APPLY_SIGN_ERROR_SUBTRACTING",
+      "wrongPattern": "When subtracting equations, only changes the sign of the first term, e.g. (3x+2y)-(x-2y) gives 2x+0y instead of 2x+4y.",
+      "misconception": "Forgets that subtracting flips the sign of every term in the second equation.",
+      "remediationHint": "Subtracting a negative term makes it positive \u2014 change the sign of every term you subtract."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply"
+   ],
+   "conceptualPrerequisites": [
+    "ALGEBRA.SOLVE_LINEAR_EQUATION",
+    "ALGEBRA.SUBSTITUTE_AND_EVALUATE",
+    "ALGEBRA.COLLECT_LIKE_TERMS"
+   ],
+   "derivableFrom": [],
+   "homeSubtopics": [
+    "2.4.3",
+    "8.5.2"
+   ]
+  },
+  {
+   "id": "ALGEBRA.SUBSTITUTE_AND_EVALUATE",
+   "status": "proposed",
+   "content": {
+    "statement": "Substitute numerical values (including decimals and fractions) into algebraic expressions involving powers and roots, and evaluate the result.",
+    "teachingUnit": {
+     "explanation": "Replace each letter with its given value in brackets, then evaluate using order of operations (BIDMAS). Brackets matter most with powers and negatives: a coefficient like 3x\u00b2 means 3 \u00d7 (x\u00b2), not (3x)\u00b2. For x = -2: 3x\u00b2 = 3 \u00d7 (-2)\u00b2 = 3 \u00d7 4 = 12. For x = 0.5: x\u00b3 = (0.5)\u00b3 = 0.125. Always substitute the WHOLE value \u2014 sign and all \u2014 inside brackets, then apply powers/roots before multiplying or adding."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_NEGATIVE_NOT_BRACKETED",
+      "wrongPattern": "Writes -2\u00b2 = -4 when x = -2, so x\u00b2 gives -4 instead of 4.",
+      "misconception": "Thinks the squaring does not apply to the negative sign of the substituted value.",
+      "remediationHint": "Put the whole value in brackets first: (-2)\u00b2 = 4, since the minus is squared too."
+     },
+     {
+      "code": "APPLY_COEFFICIENT_RAISED",
+      "wrongPattern": "Evaluates 3x\u00b2 with x=2 as (3\u00d72)\u00b2 = 36 instead of 3\u00d7(2\u00b2) = 12.",
+      "misconception": "Believes the power applies to the coefficient and variable together.",
+      "remediationHint": "The power attaches only to x. Square x first, then multiply by 3."
+     },
+     {
+      "code": "APPLY_POWER_AS_MULTIPLY",
+      "wrongPattern": "Treats x\u00b3 as 3 \u00d7 x, e.g. with x = 4 writes 12 instead of 64.",
+      "misconception": "Confuses an exponent with a multiplier.",
+      "remediationHint": "x\u00b3 means x \u00d7 x \u00d7 x, not 3 \u00d7 x. Multiply the base by itself three times."
+     },
+     {
+      "code": "APPLY_IGNORES_BIDMAS",
+      "wrongPattern": "In 2 + x\u00b2 with x = 3, adds first: (2+3)\u00b2 = 25 instead of 2 + 9 = 11.",
+      "misconception": "Evaluates left-to-right, ignoring that powers come before addition.",
+      "remediationHint": "Do the power before the addition: square x, then add."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply"
+   ],
+   "conceptualPrerequisites": [
+    "ARITH.EVALUATE_POWER"
+   ],
+   "derivableFrom": [],
+   "homeSubtopics": [
+    "2.1.4",
+    "2.3.3"
+   ]
+  },
+  {
+   "id": "ARITH.EVALUATE_NTH_ROOT",
+   "status": "proposed",
+   "content": {
+    "statement": "State the definition of an nth root as the inverse of a power, and evaluate the nth root of a number (square, cube, or higher roots of positive or negative numbers where defined).",
+    "teachingUnit": {
+     "explanation": "The nth root of a number x is the value that, when raised to the power n, gives x. So the cube root of 27 is 3 because 3 cubed = 27. To evaluate, ask 'what number to the power n gives this?' Use your power facts in reverse. Odd roots of negatives are defined (cube root of -8 = -2, since (-2)cubed = -8). Even roots of negatives are NOT real, since any real number squared is positive. The positive square root is the conventional answer (square root of 16 = 4)."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_DIVIDES_BY_INDEX",
+      "wrongPattern": "Computes the nth root by dividing, e.g. square root of 16 = 16/2 = 8, or cube root of 27 = 27/3 = 9.",
+      "misconception": "Thinks 'root' means divide by the index rather than reverse the power.",
+      "remediationHint": "Ask: what number times itself n times gives this? Test: does 8 x 8 = 16? No."
+     },
+     {
+      "code": "APPLY_EVEN_ROOT_OF_NEGATIVE",
+      "wrongPattern": "States square root of -16 = -4, or square root of -9 = -3.",
+      "misconception": "Believes you can take the even root of a negative and the answer is just negative.",
+      "remediationHint": "Check: (-4) x (-4) = +16, not -16. Even roots of negatives are not real."
+     },
+     {
+      "code": "APPLY_CUBE_ROOT_NEG_MADE_POSITIVE",
+      "wrongPattern": "States cube root of -8 = 2 instead of -2.",
+      "misconception": "Thinks all roots must be positive, so drops the negative sign.",
+      "remediationHint": "Odd roots keep the sign: (-2) cubed = -8, so the answer is -2."
+     },
+     {
+      "code": "APPLY_MULTIPLIES_BY_INDEX",
+      "wrongPattern": "Computes cube root of 27 as 27 x 3 = 81, or square root of 16 as 16 x 2.",
+      "misconception": "Confuses taking a root with raising to a power or multiplying.",
+      "remediationHint": "A root is the inverse of a power: it makes the number smaller, not bigger here. Reverse the power."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply"
+   ],
+   "conceptualPrerequisites": [
+    "ARITH.EVALUATE_POWER"
+   ],
+   "derivableFrom": [],
+   "homeSubtopics": [
+    "1.5.1",
+    "1.5.5"
+   ]
+  },
+  {
+   "id": "ARITH.EVALUATE_POWER",
+   "status": "proposed",
+   "content": {
+    "statement": "Evaluate a numerical power with integer, negative, or fractional exponent, on an integer or fractional base.",
+    "teachingUnit": {
+     "explanation": "Powers tell you what to do with the base. Positive integer: multiply the base by itself that many times, e.g. 2^4 = 16. Negative exponent means reciprocal: a^-n = 1/a^n, so 2^-3 = 1/8. Fractional exponent uses roots: a^(1/n) = nth root of a, and a^(m/n) = (nth root of a)^m. Example: 8^(2/3) = (cube root of 8)^2 = 2^2 = 4. Any nonzero base to the power 0 equals 1."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_POWER_AS_MULTIPLY",
+      "wrongPattern": "Computes 2^4 as 2 x 4 = 8 instead of 2x2x2x2 = 16.",
+      "misconception": "Thinks the exponent means multiply base by exponent.",
+      "remediationHint": "The exponent counts how many times the base appears as a factor, not a multiplier."
+     },
+     {
+      "code": "APPLY_NEGATIVE_MAKES_NEGATIVE",
+      "wrongPattern": "Writes 2^-3 = -8, making the answer negative instead of taking the reciprocal 1/8.",
+      "misconception": "Believes a negative exponent makes the result negative.",
+      "remediationHint": "A negative exponent means reciprocal: a^-n = 1/a^n. The sign of the answer is unchanged."
+     },
+     {
+      "code": "APPLY_FRACTION_DENOM_AS_POWER",
+      "wrongPattern": "Evaluates 8^(2/3) by treating it as a root only or powering only, e.g. cube root of 8 = 2, ignoring the 2; or 8^2 = 64.",
+      "misconception": "Confuses which part of m/n is the root and which is the power.",
+      "remediationHint": "Denominator is the root, numerator is the power: a^(m/n) = (nth root of a)^m."
+     },
+     {
+      "code": "APPLY_POWER_ZERO_IS_ZERO",
+      "wrongPattern": "States 5^0 = 0.",
+      "misconception": "Thinks a base to the power 0 gives 0.",
+      "remediationHint": "Any nonzero base to the power 0 is 1."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply"
+   ],
+   "conceptualPrerequisites": [
+    "ARITH.EVALUATE_NTH_ROOT"
+   ],
+   "derivableFrom": [
+    "ALGEBRA.STATE_NEGATIVE_INDEX_LAW",
+    "ALGEBRA.STATE_FRACTIONAL_INDEX_LAW"
+   ],
+   "homeSubtopics": [
+    "1.5.1",
+    "1.5.2",
+    "1.5.5"
+   ]
+  },
+  {
+   "id": "ARITH.ORDER_OF_OPERATIONS",
+   "status": "proposed",
+   "content": {
+    "statement": "Evaluate numerical expressions involving brackets, powers, roots, and the four operations using the correct order of operations (BIDMAS/BODMAS), including expressions in fractional form.",
+    "teachingUnit": {
+     "explanation": "Work through an expression in this order: Brackets, then Indices (powers and roots), then Division and Multiplication (left to right, equal priority), then Addition and Subtraction (left to right, equal priority). Example: 3 + 4 x 2^2 = 3 + 4 x 4 = 3 + 16 = 19. For fractional form like (3 + 9)/(2 x 3), treat the top and bottom as if each is bracketed: evaluate numerator and denominator fully, then divide: 12/6 = 2."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_STRICT_LEFT_TO_RIGHT",
+      "wrongPattern": "Evaluates left to right ignoring priority, e.g. 3 + 4 x 2 = 7 x 2 = 14 instead of 3 + 8 = 11.",
+      "misconception": "Thinks operations are always done in reading order.",
+      "remediationHint": "Do multiplication/division before addition/subtraction, regardless of position."
+     },
+     {
+      "code": "APPLY_DM_AS_RANK",
+      "wrongPattern": "Always does multiplication before division, e.g. 8 / 2 x 4 = 8 / 8 = 1 instead of 4 x 4 = 16.",
+      "misconception": "Reads BIDMAS as strict ranking with multiply above divide.",
+      "remediationHint": "Multiply and divide share a rank: work left to right between them."
+     },
+     {
+      "code": "APPLY_FRACTION_NO_GROUPING",
+      "wrongPattern": "In (6 + 4)/2 computes 6 + 4/2 = 8, dividing only one term.",
+      "misconception": "Doesn't treat the fraction bar as grouping the whole numerator and denominator.",
+      "remediationHint": "A fraction bar acts like brackets: evaluate the whole top and whole bottom first."
+     },
+     {
+      "code": "APPLY_POWER_INTO_BASE_SUM",
+      "wrongPattern": "Applies the power before completing a bracketed sum, e.g. (2+3)^2 = 2 + 3^2 = 11 instead of 5^2 = 25.",
+      "misconception": "Thinks indices come before brackets.",
+      "remediationHint": "Brackets come first; only then apply the power to the bracket's result."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply"
+   ],
+   "conceptualPrerequisites": [
+    "FRACTION.MULTIPLY_DIVIDE"
+   ],
+   "derivableFrom": [],
+   "homeSubtopics": [
+    "1.5.5",
+    "2.1.2",
+    "7.1.1"
+   ]
+  },
+  {
+   "id": "FRACTION.MULTIPLY_DIVIDE",
+   "status": "proposed",
+   "content": {
+    "statement": "Multiply and divide fractions, mixed numbers, and integers, including applying the reciprocal method for division.",
+    "teachingUnit": {
+     "explanation": "To multiply fractions, multiply tops together and bottoms together, then simplify: (2/3) x (4/5) = 8/15. To divide, keep the first fraction, flip the second (its reciprocal), and multiply: (2/3) \u00f7 (4/5) = (2/3) x (5/4) = 10/12 = 5/6. Convert mixed numbers to improper fractions first, and write any integer n as n/1. Cancel common factors before or after multiplying."
+    },
+    "misconceptions": [
+     {
+      "code": "APPLY_CROSS_MULTIPLY_TOP_BOTTOM",
+      "wrongPattern": "When multiplying, makes a common denominator first or adds across, e.g. (2/3) x (4/5) treated like addition.",
+      "misconception": "Thinks multiplying fractions needs a common denominator like adding does.",
+      "remediationHint": "Multiplication needs NO common denominator: just multiply straight across."
+     },
+     {
+      "code": "APPLY_FLIPS_WRONG_FRACTION",
+      "wrongPattern": "For division, flips the FIRST fraction instead of the second, e.g. (2/3) \u00f7 (4/5) = (3/2) x (4/5).",
+      "misconception": "Believes the reciprocal applies to the dividend, not the divisor.",
+      "remediationHint": "Keep the first fraction; only flip the one you are dividing BY (the second)."
+     },
+     {
+      "code": "APPLY_INVERTS_FOR_MULTIPLY",
+      "wrongPattern": "Flips the second fraction and multiplies even for a multiplication question.",
+      "misconception": "Confuses the 'keep-flip-multiply' rule as applying to all fraction operations.",
+      "remediationHint": "Only flip when DIVIDING. For multiply, multiply straight across."
+     },
+     {
+      "code": "APPLY_MIXED_NUMBER_NOT_CONVERTED",
+      "wrongPattern": "Multiplies whole parts and fraction parts separately, e.g. 1\u00bd x 2 = 2 and \u00bd giving 2\u00bd.",
+      "misconception": "Thinks mixed numbers can be multiplied piece by piece without converting.",
+      "remediationHint": "Convert mixed numbers to improper fractions first: 1\u00bd = 3/2."
+     }
+    ]
+   },
+   "supportedActions": [
+    "apply",
+    "justify"
+   ],
+   "conceptualPrerequisites": [],
+   "derivableFrom": [],
+   "homeSubtopics": [
+    "1.2.3",
+    "1.2.6",
+    "7.1.1"
+   ]
+  }
+ ],
+ "closureSize": 7,
+ "note": "the worked atom plus the seven atoms of its prerequisite closure, complete records"
+}

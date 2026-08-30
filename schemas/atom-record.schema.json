@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Atom record",
+  "description": "One atom of the catalogue: a small capability a learner can hold, with its typed links. This is the shape the bootstrap emits and everything downstream reads.",
+  "type": "object",
+  "required": ["id", "content", "supportedActions", "conceptualPrerequisites"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Z]+\\.[A-Z0-9_]+$",
+      "description": "DOMAIN.NAME, unique across the catalogue"
+    },
+    "status": { "type": "string", "description": "lifecycle state; served atoms are active" },
+    "content": {
+      "type": "object",
+      "required": ["statement"],
+      "properties": {
+        "statement": { "type": "string", "description": "one sentence: what the learner can do" },
+        "teachingUnit": { "type": "string", "description": "the teaching text a tutor draws on" },
+        "misconceptions": {
+          "type": "array",
+          "items": { "type": "object" },
+          "description": "known wrong turns, each with a code the marker can emit"
+        }
+      }
+    },
+    "supportedActions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "the actions a question may ask of this atom (apply, state, ...)"
+    },
+    "conceptualPrerequisites": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "atom ids that must be held before this one (typed edge: prereq)"
+    },
+    "derivableFrom": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "atom ids this one can be reconstructed from (typed edge: derivable)"
+    },
+    "homeSubtopics": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "positions in the curriculum taxonomy (e.g. 2.2.3)"
+    },
+    "perAction": {
+      "type": "object",
+      "description": "per-action generation contract: radicals with banded values and costs"
+    },
+    "provenance": { "type": "object", "description": "which bootstrap run produced it" }
+  }
+}

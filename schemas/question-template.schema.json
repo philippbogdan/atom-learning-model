@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Question template (composer emission)",
+  "description": "What the composer emits: a stem with named slots, the constraint the slot kernel solves, the machine-checkable answer, and the step DAG binding every step to an atom and an action. The kernel draws values; the model never invents numbers at serve time.",
+  "type": "object",
+  "required": ["question", "slots", "verifyExpression", "steps"],
+  "properties": {
+    "question": {
+      "type": "object",
+      "properties": {
+        "topText": { "type": "string" },
+        "bottomText": { "type": "string" },
+        "image": { "type": "string", "description": "inline SVG, when the question carries a diagram" }
+      }
+    },
+    "slots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "min": { "type": "number" },
+          "max": { "type": "number" },
+          "integer": { "type": "boolean" },
+          "derived": { "type": "string", "description": "expression over other slots; empty for free slots" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "constraint": { "type": "string", "description": "sympy-checkable relation the drawn values must satisfy" },
+    "answerForm": { "type": "string", "enum": ["integer", "decimal_1dp", "decimal_2dp", "fraction", "exact", "ratio", "mixed_number", "coordinate", "expression", "other"] },
+    "answerKind": { "type": "string" },
+    "displayAnswer": { "type": "string" },
+    "verifyExpression": { "type": "string", "description": "expression the kernel evaluates to recompute the answer from the drawn slots" },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["atomStepId", "atomId", "action"],
+        "properties": {
+          "atomStepId": { "type": "string" },
+          "atomId": { "type": "string" },
+          "action": { "type": "string", "description": "apply, state, ... or incidental for a prerequisite mention" },
+          "dependsOn": { "type": "array", "items": { "type": "string" } },
+          "expression": { "type": "string" },
+          "description": { "type": "string" },
+          "guidance": { "type": "string" }
+        }
+      }
+    },
+    "needsDiagram": { "type": "boolean" },
+    "diagramSpec": { "type": "object" }
+  }
+}

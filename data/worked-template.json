@@ -1,0 +1,324 @@
+{
+ "note": "the real production emission behind section 7 of the report: the composer template for algebraic solution of simultaneous equations, and the eight kernel draws the report prints, replayed through the production slot kernel",
+ "seedsPerTemplate": 8,
+ "candidatesPerDraw": 96,
+ "template": {
+  "subtopic": "2.4.3",
+  "teacherPrompt": "Generate one moderate GCSE maths question on Algebraic solution (elimination/substitution).",
+  "needsDiagram": false,
+  "emission": {
+   "question": {
+    "topText": "Solve the simultaneous equations.\n\nmaths{@a1@x + @b1@y = @c1@}\n\nmaths{@a2@x - @b2@y = @c2@}",
+    "bottomText": "Find the value of maths{x}.",
+    "image": ""
+   },
+   "slots": [
+    {
+     "name": "xsol",
+     "min": -6,
+     "max": 8,
+     "integer": true,
+     "note": "the solution value of x (hidden generator)",
+     "derived": ""
+    },
+    {
+     "name": "ysol",
+     "min": -6,
+     "max": 8,
+     "integer": true,
+     "note": "the solution value of y (hidden generator)",
+     "derived": ""
+    },
+    {
+     "name": "a1",
+     "min": 2,
+     "max": 6,
+     "integer": true,
+     "note": "coefficient of x in equation 1",
+     "derived": ""
+    },
+    {
+     "name": "b1",
+     "min": 2,
+     "max": 6,
+     "integer": true,
+     "note": "coefficient of y in equation 1",
+     "derived": ""
+    },
+    {
+     "name": "a2",
+     "min": 2,
+     "max": 6,
+     "integer": true,
+     "note": "coefficient of x in equation 2",
+     "derived": ""
+    },
+    {
+     "name": "b2",
+     "min": 2,
+     "max": 6,
+     "integer": true,
+     "note": "coefficient of y in equation 2",
+     "derived": ""
+    },
+    {
+     "name": "c1",
+     "min": 0,
+     "max": 0,
+     "integer": true,
+     "note": "RHS of equation 1",
+     "derived": "a1*xsol + b1*ysol"
+    },
+    {
+     "name": "c2",
+     "min": 0,
+     "max": 0,
+     "integer": true,
+     "note": "RHS of equation 2",
+     "derived": "a2*xsol - b2*ysol"
+    }
+   ],
+   "constraint": "Ne(xsol, 0) and Ne(ysol, 0) and Ne(a1*b2, -a2*b1) and Ne(a1, a2) and Ne(b1, b2)",
+   "answerForm": "integer",
+   "answerKind": "computed",
+   "displayAnswer": "",
+   "verifyExpression": "",
+   "steps": [
+    {
+     "atomStepId": "s1",
+     "atomId": "ALGEBRA.SOLVE_LINEAR_SIMULTANEOUS",
+     "action": "apply",
+     "expression": "(c1*b2 + c2*b1)/(a1*b2 + a2*b1)",
+     "dependsOn": [],
+     "description": "Eliminate one unknown by scaling the equations to align coefficients, then solve for maths{x}.",
+     "guidance": "Multiply each equation so the maths{y}-coefficients match, then add to eliminate maths{y}. The two equations have opposite signs on maths{y}, so adding suitable multiples removes it and leaves an equation in maths{x} alone."
+    }
+   ],
+   "diagramSpec": ""
+  },
+  "derived": {
+   "steps": [
+    {
+     "id": "s1",
+     "atomId": "ALGEBRA.SOLVE_LINEAR_SIMULTANEOUS",
+     "action": "apply",
+     "expression": "(c1*b2 + c2*b1)/(a1*b2 + a2*b1)",
+     "dependsOn": [],
+     "description": "Eliminate one unknown by scaling the equations to align coefficients, then solve for maths{x}."
+    }
+   ],
+   "edges": {
+    "s1": []
+   },
+   "sinkId": "s1",
+   "answerFormula": "(c1*b2 + c2*b1)/(a1*b2 + a2*b1)",
+   "declared": {
+    "depth": 1,
+    "marks": 1,
+    "components": 1,
+    "tier": "basic"
+   },
+   "afterCollapse": {
+    "depth": 1,
+    "marks": 1,
+    "components": 1,
+    "tier": "basic"
+   },
+   "rederived": {
+    "depth": 1,
+    "marks": 1,
+    "components": 1,
+    "tier": "basic"
+   },
+   "collapseDropped": 0,
+   "depthGap": 0,
+   "depthGapFromCollapse": 0,
+   "depthGapFromRederivation": 0,
+   "tierChanged": false
+  },
+  "draws": [
+   {
+    "seed": "artifact-seed-a",
+    "ok": true,
+    "values": {
+     "xsol": 7,
+     "ysol": 6,
+     "a1": 3,
+     "b1": 6,
+     "a2": 4,
+     "b2": 2,
+     "c1": 57,
+     "c2": 16
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{3x + 6y = 57}\n\nmaths{4x - 2y = 16}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "7",
+    "displayAnswer": "7",
+    "stepValues": {
+     "s1": "7"
+    },
+    "niceHit": true
+   },
+   {
+    "seed": "artifact-seed-b",
+    "ok": true,
+    "values": {
+     "xsol": 1,
+     "ysol": 3,
+     "a1": 4,
+     "b1": 4,
+     "a2": 6,
+     "b2": 2,
+     "c1": 16,
+     "c2": 0
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{4x + 4y = 16}\n\nmaths{6x - 2y = 0}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "1",
+    "displayAnswer": "1",
+    "stepValues": {
+     "s1": "1"
+    },
+    "niceHit": true
+   },
+   {
+    "seed": "artifact-seed-c",
+    "ok": true,
+    "values": {
+     "xsol": 3,
+     "ysol": -1,
+     "a1": 4,
+     "b1": 5,
+     "a2": 5,
+     "b2": 3,
+     "c1": 7,
+     "c2": 18
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{4x + 5y = 7}\n\nmaths{5x - 3y = 18}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "3",
+    "displayAnswer": "3",
+    "stepValues": {
+     "s1": "3"
+    },
+    "niceHit": true
+   },
+   {
+    "seed": "artifact-seed-d",
+    "ok": true,
+    "values": {
+     "xsol": -4,
+     "ysol": -3,
+     "a1": 5,
+     "b1": 3,
+     "a2": 4,
+     "b2": 4,
+     "c1": -29,
+     "c2": -4
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{5x + 3y = -29}\n\nmaths{4x - 4y = -4}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "-4",
+    "displayAnswer": "-4",
+    "stepValues": {
+     "s1": "-4"
+    },
+    "niceHit": true
+   },
+   {
+    "seed": "artifact-seed-e",
+    "ok": true,
+    "values": {
+     "xsol": -5,
+     "ysol": -6,
+     "a1": 5,
+     "b1": 2,
+     "a2": 2,
+     "b2": 5,
+     "c1": -37,
+     "c2": 20
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{5x + 2y = -37}\n\nmaths{2x - 5y = 20}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "-5",
+    "displayAnswer": "-5",
+    "stepValues": {
+     "s1": "-5"
+    },
+    "niceHit": true
+   },
+   {
+    "seed": "artifact-seed-f",
+    "ok": true,
+    "values": {
+     "xsol": 3,
+     "ysol": -5,
+     "a1": 5,
+     "b1": 6,
+     "a2": 2,
+     "b2": 4,
+     "c1": -15,
+     "c2": 26
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{5x + 6y = -15}\n\nmaths{2x - 4y = 26}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "3",
+    "displayAnswer": "3",
+    "stepValues": {
+     "s1": "3"
+    },
+    "niceHit": true
+   },
+   {
+    "seed": "artifact-seed-g",
+    "ok": true,
+    "values": {
+     "xsol": -6,
+     "ysol": 1,
+     "a1": 2,
+     "b1": 4,
+     "a2": 4,
+     "b2": 2,
+     "c1": -8,
+     "c2": -26
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{2x + 4y = -8}\n\nmaths{4x - 2y = -26}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "-6",
+    "displayAnswer": "-6",
+    "stepValues": {
+     "s1": "-6"
+    },
+    "niceHit": true
+   },
+   {
+    "seed": "artifact-seed-h",
+    "ok": true,
+    "values": {
+     "xsol": 2,
+     "ysol": 4,
+     "a1": 4,
+     "b1": 4,
+     "a2": 3,
+     "b2": 3,
+     "c1": 24,
+     "c2": -6
+    },
+    "topText": "Solve the simultaneous equations.\n\nmaths{4x + 4y = 24}\n\nmaths{3x - 3y = -6}",
+    "bottomText": "Find the value of maths{x}.",
+    "machineAnswer": "2",
+    "displayAnswer": "2",
+    "stepValues": {
+     "s1": "2"
+    },
+    "niceHit": true
+   }
+  ],
+  "drawSummary": {
+   "seeds": 8,
+   "ok": 8,
+   "distinctAnswers": 7,
+   "distinctQuestions": 8
+  }
+ }
+}

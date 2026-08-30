@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Credit vector",
+  "description": "The marker's output for one attempt, and the only thing the model of the child reads: per-atom credit with the action exercised, plus an optional misconception code.",
+  "type": "object",
+  "required": ["attemptId", "exerciseId", "entries"],
+  "properties": {
+    "attemptId": { "type": "string" },
+    "exerciseId": { "type": "string" },
+    "studentId": { "type": "string", "description": "pseudonymous" },
+    "origin": { "type": "string", "description": "marker" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["atomId", "action", "credited"],
+        "properties": {
+          "atomId": { "type": "string" },
+          "action": { "type": "string" },
+          "credited": { "type": "boolean" },
+          "signalStrength": { "type": "number", "minimum": 0, "maximum": 1 },
+          "misconceptionCode": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}
