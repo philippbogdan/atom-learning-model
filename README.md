@@ -1,17 +1,27 @@
-# Atom Learning Model (ALM): companion data
+# Atom Learning Model (ALM)
 
-Companion repository for **"Atom Learning Model (ALM): how a real classroom
-got tokenised"**, arXiv:2608.21106
-([abstract](https://arxiv.org/abs/2608.21106), [PDF in this
-repository](atom-learning-model.pdf), DOI
-[10.48550/arXiv.2608.21106](https://doi.org/10.48550/arXiv.2608.21106)).
-The report describes a deployed
-tutoring system whose curriculum is a catalogue of 1,934 atoms, small
-checkable capabilities, joined by 4,616 typed prerequisite links, on which
-questions are composed and children's ability is tracked, atom by atom.
+Adaptive mathematics tutoring needs to know which small skills each child
+holds and set work just beyond them. ALM reads GCSE and Further Mathematics
+material into a map of single-step skills.
 
-An interactive view of the catalogue being built, page by page from the two
-source textbooks, is at **https://philippbogdan.com/atoms**.
+ALM composed 6,648 mathematics questions for 373 children in two English
+secondary schools over seven weeks, at 26p per composed question for
+composition and checking. No one wrote a skill, prerequisite link or question.
+
+Reading 757 pages of GCSE and Further Mathematics material cost £55;
+the paper estimates £615 to £1,230 for the whole curriculum structure.
+The [released graph, worked examples and schemas](#what-is-here) let
+researchers inspect this alternative to expert-built skill maps and
+hand-written question templates.
+
+The difficulty labels failed: across 730 measured questions, their rank
+correlation with the share answered correctly was −0.0123, effectively zero.
+
+Companion data for [Atom Learning Model (ALM): how a real classroom got
+tokenised](atom-learning-model.pdf),
+[arXiv:2608.21106](https://arxiv.org/abs/2608.21106), DOI
+[10.48550/arXiv.2608.21106](https://doi.org/10.48550/arXiv.2608.21106).
+[Interactive companion](https://philippbogdan.com/atoms).
 
 ## What is here
 
@@ -48,6 +58,21 @@ that atom, how much of the closure carried evidence at that moment); one row
 per question (the atoms it composes, its declared band, compose passes,
 cost); one row per session (child index, ordered attempts, the wait for each
 mark, whether another attempt followed).
+
+## Assumptions made
+
+- The build bracket is estimated from measured stage shares. Costs use
+  list-price model billing, converted at $1.30 to £1, without batching or
+  caching.
+- The archive does not record how many composed questions reached children.
+  Composition and checking cost 26p to £1.10 per answered question.
+- The 730 measured questions each had at least five scored attempts; only
+  four of those 730 were labelled advanced. Marking accuracy was not
+  independently checked.
+- Mastery scores were reconstructed afterwards and never drove selection.
+  Too few deep questions were served to test whether prerequisite depth and
+  missing skills explain difficulty; the premise remains unconfirmed. No
+  subject specialist checked the catalogue.
 
 ## Licence
 
