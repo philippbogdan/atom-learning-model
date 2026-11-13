@@ -27,8 +27,8 @@ tokenised](atom-learning-model.pdf),
 
 Exactly what section 12 of the report promises: enough to inspect the
 structures and to rebuild the system's shape, without the things that cannot
-be released (children's classroom work, the full catalogue content derived
-from two commercial textbooks, the production codebase).
+be released (children's classroom work, the full catalogue content, which
+derives from copyrighted material, the production codebase).
 
 - `data/worked-closure.json`: the report's worked atom,
   `ALGEBRA.SOLVE_LINEAR_SIMULTANEOUS`, with the complete catalogue records of
